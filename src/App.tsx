@@ -1,0 +1,48 @@
+import './App.css'
+
+type UserType = {
+  id: number,
+  name: string,
+  surname: string,
+  email: string
+}
+
+function App() {
+
+  let users: UserType[] = 
+  [
+    {id:1, name: "Karol", surname: "May", email: "k.may@gmail.com" }
+  ];
+
+  return (
+    <>
+      <table className={"table table-striped table-bordered"}>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>E-mail</th>
+            <th>Akcje</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((v)=>
+            <tr>
+              <td>{v.id}</td>
+              <td>{v.name}</td>
+              <td>{v.surname}</td>
+              <td>{v.email}</td>
+              <td className={"d-flex gap-2"}>
+                <button className={"btn btn-info btn-sm text-white"}><i className="bi bi-eye"></i></button>
+                <button className={"btn btn-primary btn-sm"}><i className="bi bi-pencil"></i></button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table> 
+    </>
+  )
+}
+
+export default App
